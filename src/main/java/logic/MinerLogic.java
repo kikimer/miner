@@ -2,8 +2,6 @@ package logic;
 
 import common.*;
 import controller.Logic;
-import model.ChangeGameStatusListener;
-import model.ChangeModelListener;
 
 import java.awt.*;
 import java.util.*;
@@ -19,8 +17,6 @@ public class MinerLogic implements Logic {
      * Ложь : завершена. (Класс не реагирует на внешние события)
      */
     private boolean gameStarted = false;
-    final private java.util.List<ChangeModelListener> chaneCellsListeners = new LinkedList<>();
-    final private java.util.List<ChangeGameStatusListener> changeGameStatusListeners = new LinkedList<>();
     final private GameStatusModel gameStatusModel;
     final private CellModel cellModel;
 
