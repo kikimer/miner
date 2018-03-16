@@ -39,7 +39,7 @@ public class MinerCellModel implements CellModel {
 
     @Override
     public CellType getCellType(int x, int y) {
-        return getCell(x, y).getCellType();
+        return getCellLocal(x, y).getCellType();
     }
 
     @Override
