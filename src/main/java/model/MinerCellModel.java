@@ -3,17 +3,17 @@ package model;
 import common.Cell;
 import common.CellType;
 import logic.CellModel;
-import org.apache.log4j.Logger;
 
 import java.awt.*;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
+import java.util.logging.Logger;
 import java.util.stream.Stream;
 
 public class MinerCellModel implements CellModel {
-    private final Logger log = Logger.getLogger(getClass());
+    private final static Logger log = Logger.getLogger(MinerCellModel.class.getName());
     final private int WIDTH;
     final private int HEIGHT;
     final private java.util.List<ChangeModelListener> chaneCellsListeners = new LinkedList<>();
@@ -78,7 +78,7 @@ public class MinerCellModel implements CellModel {
 
     private Cell getCellLocal(int x, int y) {
         if (!isCorrectCell(x, y)) {
-            log.error("выход за границы массива модели! x:" + x + ", y:" + y + ", размер: " + WIDTH + "x" + HEIGHT);
+            log.severe("выход за границы массива модели! x:" + x + ", y:" + y + ", размер: " + WIDTH + "x" + HEIGHT);
             throw new ArrayIndexOutOfBoundsException();
         }
         int index = y * WIDTH + x;
